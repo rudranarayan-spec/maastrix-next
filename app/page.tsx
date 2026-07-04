@@ -1,8 +1,8 @@
 import HeroSection from "@/components/home/HeroSection";
-import ServicesSection from "@/components/home/ServicesSection";
 import CompanyProfile from "@/components/CompanyProfile"
 import ClientSlider from "@/components/shared/ClientSlider"
 import WhyChooseUs from "@/components/WhyChooseUs";
+import CaseStudyJournal from "@/components/CaseStudyJournal";
 
 export default function Home() {
   return (
@@ -10,8 +10,8 @@ export default function Home() {
       <HeroSection />
       <CompanyProfile/>
       <WhyChooseUs/>
+      <CaseStudyJournal/>
       <ClientSlider/>
-      <ServicesSection />
     </main>
   );
 }

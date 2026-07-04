@@ -2,6 +2,7 @@ import AboutHero from "@/components/about/AboutHero";
 import AboutProcess from "@/components/about/AboutProcess"
 import AboutStory from "@/components/about/AboutStory"
 import AboutTestimonials from "@/components/about/AboutTestimonal"
+import CaseStudyJournal from "@/components/CaseStudyJournal";
 
 export const metadata = {
   title: "About Maastrix Solutions | Enterprise Web & IT Engineering Leader",
@@ -15,6 +16,7 @@ export default function Home() {
       <AboutHero />
       <AboutProcess/>
       <AboutStory/>
+      <CaseStudyJournal/>
       <AboutTestimonials/>
     </main>
   );
