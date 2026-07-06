@@ -32,7 +32,7 @@ export default function ProjectCTA() {
       <div 
         className="absolute inset-0 bg-cover bg-center opacity-25 mix-blend-luminosity pointer-events-none transition-transform duration-100 ease-out scale-105 will-change-transform"
         style={{ 
-          backgroundImage: "url('/assets/images/backgrounds/corporate-towers.jpg')",
+          backgroundImage: "url('/assets/images/backgrounds/corporate-building.jpg')",
           transform: "translate3d(0, var(--bg-parallax), 0) scale(1.05)"
         }}
       />

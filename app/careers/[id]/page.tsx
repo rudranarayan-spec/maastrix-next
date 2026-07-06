@@ -3,7 +3,7 @@
 import React, { useMemo } from "react";
 import { useParams } from "next/navigation";
 import JobDetailHero from "@/components/careers/JobDetailHero";
-import JobDetailsPage from "@/components/JobDetailsPage";
+import JobDetailsPage from "@/components/careers/JobDetailsPage";
 import { openPositions } from "@/data/careers";
 
 export default function JobDetailPageWrapper() {

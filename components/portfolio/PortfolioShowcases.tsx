@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
-import { ArrowUpRight, Folder, Globe, Layers } from "lucide-react";
+import { ArrowUpRight, Folder, Globe, Layers, ArrowRight } from "lucide-react";
 import { mockProjects, Project } from "@/data/portfolio";
 
 type FilterCategory = "All" | "Web" | "Mobile App" | "Enterprise Software" | "Developer Tools";
@@ -18,36 +18,44 @@ export default function PortfolioShowcase() {
   }, [activeCategory]);
 
   return (
-    <section id="portfolio" className="bg-white text-slate-900 font-sans py-16 lg:py-24 border-b border-slate-100">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section id="portfolio" className="relative w-full bg-slate-50 text-slate-900 py-20 lg:py-32 overflow-hidden border-b border-slate-200">
+      {/* Subdued Geometric Backdrop Matrix */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0284c702_1px,transparent_1px),linear-gradient(to_bottom,#0284c703_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full z-10 space-y-16">
         
-        {/* STRUCTURAL HEADER SECTION */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div className="space-y-4 max-w-xl">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-600" />
-              <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">
-                Our Work
+        {/* =========================================================================
+            STRUCTURAL HEADER SECTION
+            ========================================================================= */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-slate-200/60 pb-8">
+          <div className="space-y-4 max-w-2xl">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-[0_1px_2px_rgba(0,0,0,0.02)]">
+              <span className="h-1.5 w-1.5 rounded-full bg-blue-600 animate-pulse" />
+              <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">
+                Production Case Studies
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-slate-950 leading-tight">
-              Proven Deployments. Global Infrastructure.
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-950 leading-[1.1]">
+              Proven Deployments. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
+                Global Infrastructure.
+              </span>
             </h2>
-            <p className="text-sm text-slate-500 font-medium">
-              Explore our selection of highly scalable backend ecosystems, mobile architectures, and developer resources shipped across the globe.
+            <p className="text-sm sm:text-base text-slate-500 font-medium leading-relaxed max-w-xl">
+              Explore our verified portfolio of robust backend architectures, low-latency mobile platforms, and high-velocity developer tools shipped worldwide.
             </p>
           </div>
 
-          {/* DYNAMIC COMPACT CONTROLLER FILTER BAR */}
-          <div className="flex flex-wrap gap-1.5 bg-slate-50 border border-slate-200/60 p-1.5 rounded-xl self-start md:self-end">
+          {/* PREMIUM COMPACT CONTROLLER FILTER BAR */}
+          <div className="flex flex-wrap gap-1 bg-white border border-slate-200 p-1.5 rounded-2xl self-start lg:self-end shadow-[0_4px_12px_rgba(0,0,0,0.02)] max-w-full overflow-x-auto no-scrollbar">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-bold tracking-tight transition-all duration-200 ${
+                className={`px-4 py-2 rounded-xl text-xs font-black tracking-tight uppercase transition-all duration-200 whitespace-nowrap ${
                   activeCategory === cat
-                    ? "bg-blue-600 text-white shadow-sm"
-                    : "text-slate-600 hover:text-slate-950 hover:bg-slate-100"
+                    ? "bg-slate-950 text-white shadow-md scale-[1.02]"
+                    : "text-slate-500 hover:text-slate-950 hover:bg-slate-50"
                 }`}
               >
                 {cat}
@@ -56,64 +64,74 @@ export default function PortfolioShowcase() {
           </div>
         </div>
 
-        {/* PROJECTS GRID MATRIX */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* =========================================================================
+            PROJECTS GRID MATRIX
+            ========================================================================= */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {filteredProjects.map((project: Project) => (
             <div
               key={project.id}
-              className="group flex flex-col justify-between p-6 bg-white border border-slate-200/80 rounded-2xl shadow-sm hover:shadow-md hover:border-slate-300 transition-all duration-300"
+              className="group relative flex flex-col justify-between p-6 sm:p-8 bg-white border border-slate-200/80 rounded-3xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.04)] hover:border-slate-300 transition-all duration-300 hover:bg-[#090b0e] hover:border-[#090b0e] overflow-hidden"
             >
+              {/* Premium Top Line Accent Frame */}
+              <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-500/50 transition-all duration-500" />
+
               <div>
                 {/* Meta Row: Project Type Tag & Client Geo-Location */}
-                <div className="flex items-center justify-between gap-4 mb-5 pb-4 border-b border-slate-100">
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-600 bg-blue-50/50 px-2.5 py-1 rounded-md">
-                    <Folder className="h-3 w-3" />
+                <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-100 group-hover:border-white/10 transition-colors duration-200">
+                  <span className="inline-flex items-center gap-1.5 text-[10px] font-black uppercase tracking-wider text-blue-600 bg-blue-50 border border-blue-100/40 px-2.5 py-1 rounded-md group-hover:bg-white/10 group-hover:text-blue-400 group-hover:border-transparent transition-all duration-200">
+                    <Folder className="h-3 w-3 shrink-0" />
                     {project.category}
                   </span>
-                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-400">
-                    <Globe className="h-3 w-3 text-slate-300" />
+                  <span className="inline-flex items-center gap-1 text-[11px] font-bold text-slate-400 group-hover:text-slate-500 transition-colors duration-200">
+                    <Globe className="h-3 w-3 text-slate-300 group-hover:text-slate-600 transition-colors duration-200" />
                     {project.clientCountry}
                   </span>
                 </div>
 
                 {/* Main Identity Title & Narrative */}
-                <div className="space-y-2 mb-6">
-                  <h3 className="text-lg font-black tracking-tight text-slate-950 group-hover:text-blue-600 transition-colors duration-200">
+                <div className="space-y-3 mb-6">
+                  <h3 className="text-xl font-black tracking-tight text-slate-950 group-hover:text-white transition-colors duration-200 flex items-center justify-between gap-2">
                     {project.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-500 group-hover:text-slate-400 font-medium leading-relaxed transition-colors duration-200">
                     {project.description}
                   </p>
                 </div>
               </div>
 
               {/* Lower Section: Tech Stack Pill Trays & Deep Link */}
-              <div className="space-y-5 pt-2">
-                <div className="flex flex-wrap gap-1">
+              <div className="space-y-6 pt-2">
+                <div className="flex flex-wrap gap-1.5">
                   {project.techStack.map((tech) => (
                     <span
                       key={tech}
-                      className="text-[10px] font-semibold text-slate-600 bg-slate-100 px-2 py-0.5 rounded-sm"
+                      className="text-[10px] font-bold tracking-wide text-slate-600 bg-slate-50 border border-slate-200/40 px-2.5 py-1 rounded-md group-hover:bg-white/5 group-hover:text-slate-300 group-hover:border-transparent transition-all duration-200"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-slate-100 text-[11px] font-bold">
+                {/* Client Reference & Call to Action Footer */}
+                <div className="flex items-center justify-between pt-4 border-t border-slate-100 group-hover:border-white/10 text-[11px] font-bold transition-colors duration-200">
                   <div>
-                    <span className="text-slate-400 block font-medium text-[10px] uppercase tracking-wider">Client</span>
-                    <span className="text-slate-800">{project.clientName}</span>
+                    <span className="text-slate-400 group-hover:text-slate-500 block font-medium text-[9px] uppercase tracking-widest">
+                      Enterprise Client
+                    </span>
+                    <span className="text-slate-800 group-hover:text-white text-xs sm:text-sm font-black transition-colors duration-200">
+                      {project.clientName}
+                    </span>
                   </div>
                   
                   <a
                     href={project.deepLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 px-3 py-2 bg-slate-50 hover:bg-blue-600 border border-slate-200/60 hover:border-blue-600 text-slate-700 hover:text-white rounded-lg transition-all duration-200 group/link"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 bg-slate-50 group-hover:bg-white border border-slate-200 group-hover:border-white text-slate-700 group-hover:text-slate-950 rounded-xl transition-all duration-300 shadow-sm font-black uppercase tracking-widest text-[10px]"
                   >
                     Launch
-                    <ArrowUpRight className="h-3.5 w-3.5 text-slate-400 group-hover/link:text-white transition-transform duration-200 group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+                    <ArrowUpRight className="h-3.5 w-3.5 text-slate-400 group-hover:text-slate-950 transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                   </a>
                 </div>
               </div>
@@ -122,11 +140,14 @@ export default function PortfolioShowcase() {
           ))}
         </div>
 
-        {/* Empty State Fallback */}
+        {/* =========================================================================
+            EMPTY STATE FALLBACK
+            ========================================================================= */}
         {filteredProjects.length === 0 && (
-          <div className="text-center py-16 border border-dashed border-slate-200 rounded-2xl bg-slate-50/50">
-            <Layers className="h-8 w-8 text-slate-300 mx-auto mb-2" />
-            <p className="text-xs font-bold text-slate-400 uppercase tracking-wider">No projects deployed under this category yet.</p>
+          <div className="text-center py-20 border border-dashed border-slate-200 rounded-3xl bg-white shadow-sm max-w-md mx-auto">
+            <Layers className="h-10 w-10 text-slate-300 mx-auto mb-3 animate-pulse" />
+            <h4 className="text-sm font-black text-slate-950 uppercase tracking-wider">Pipeline Syncing</h4>
+            <p className="text-xs font-medium text-slate-400 mt-1">Additional software products under this engine matrix are coming online soon.</p>
           </div>
         )}
 

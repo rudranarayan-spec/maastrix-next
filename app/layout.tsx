@@ -2,6 +2,7 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import "./globals.css";
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import CookieConsent from '@/components/CookieConsent';
 
 // Configure the Inter font weights
 const jakarta = Plus_Jakarta_Sans({
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body>
         <Navbar/>
         {children}
+        <CookieConsent/>
         <Footer/>
       </body>
     </html>
