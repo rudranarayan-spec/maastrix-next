@@ -132,38 +132,38 @@ export default function WhyChooseUs() {
           </div>
 
           {/* =========================================================================
-              RIGHT BLOCK: ARCHITECTURAL VALUE CARDS
+              RIGHT BLOCK: ARCHITECTURAL VALUE CARDS (With Dark Theme Hover State)
               ========================================================================= */}
           <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 w-full">
             {features.map((item, index) => (
               <div 
                 key={index}
-                className="relative p-6 bg-white border border-slate-200/80 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.03)] transition-all duration-300 hover:border-blue-500/40 group flex flex-col justify-between"
+                className="relative p-6 bg-white border border-slate-200/80 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.01)] hover:shadow-xl transition-all duration-300 hover:bg-[#090b0e] hover:border-[#090b0e] group flex flex-col justify-between overflow-hidden"
               >
-                {/* Structural Line Frame (Premium Design Touch) */}
-                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-blue-500/0 to-transparent group-hover:via-blue-500/40 transition-all duration-500" />
+                {/* Structural Line Frame (Permanently Fixed Top Highlight Line) */}
+                <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
 
                 <div className="space-y-4">
                   {/* Micro Icon Housing Grid */}
-                  <div className="inline-flex p-2.5 rounded-xl bg-slate-50 text-slate-700 border border-slate-100 transition-all duration-300 group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 group-hover:scale-105 shadow-sm">
+                  <div className="inline-flex p-2.5 rounded-xl bg-slate-50 text-slate-700 border border-slate-100 transition-all duration-300 group-hover:bg-white group-hover:text-slate-950 group-hover:border-white group-hover:scale-105 shadow-sm">
                     {item.icon}
                   </div>
                   
                   <div className="space-y-2">
-                    <h3 className="text-base font-black tracking-tight text-slate-950 group-hover:text-blue-600 transition-colors duration-200">
+                    <h3 className="text-base font-black tracking-tight text-slate-950 group-hover:text-white transition-colors duration-200">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
+                    <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-400 transition-colors duration-200">
                       {item.description}
                     </p>
                   </div>
                 </div>
 
                 {/* Micro Validation Specs Array */}
-                <div className="mt-6 pt-4 border-t border-slate-50 space-y-1.5">
+                <div className="mt-6 pt-4 border-t border-slate-100 group-hover:border-white/10 space-y-1.5 transition-colors duration-200">
                   {item.specs.map((spec, sIdx) => (
-                    <div key={sIdx} className="flex items-center gap-2 text-[11px] font-bold text-slate-400">
-                      <CheckCircle2 className="h-3 w-3 text-blue-500/70 shrink-0" />
+                    <div key={sIdx} className="flex items-center gap-2 text-[11px] font-bold text-slate-400 group-hover:text-slate-300 transition-colors duration-200">
+                      <CheckCircle2 className="h-3 w-3 text-blue-500 shrink-0" />
                       <span className="tracking-wide">{spec}</span>
                     </div>
                   ))}
