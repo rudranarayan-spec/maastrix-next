@@ -11,7 +11,7 @@ export default function QuoteForm() {
     setFormStatus("submitting");
 
     const formData = new FormData(e.currentTarget);
-    
+
     // Web3Forms access key safely pulled from client environment variables
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
     formData.append("access_key", accessKey);
@@ -50,7 +50,7 @@ export default function QuoteForm() {
   return (
     <div className="max-w-4xl mx-auto my-16 lg:my-24 px-6 w-full">
       <div className="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-xl shadow-slate-100/40 space-y-10 relative overflow-hidden">
-        
+
         {/* Subtle top branding line */}
         <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-blue-500 via-indigo-500 to-blue-600" />
 
@@ -77,6 +77,11 @@ export default function QuoteForm() {
         <form onSubmit={handleSubmit} className="space-y-8">
           {/* Web3Forms Honeypot Anti-Spam */}
           <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+          <input
+            type="hidden"
+            name="subject"
+            value="[INBOUND RFP] New Project Quote Request"
+          />
 
           {/* 1. Core Profile Identity Layer */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

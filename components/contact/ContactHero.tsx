@@ -85,7 +85,7 @@ export default function ContactHero() {
             {/* Scroll Panel Trigger Button */}
             <div className="pt-4">
               <a 
-                href="#contact-interface"
+                href="#contact"
                 className="inline-flex items-center gap-2.5 text-xs font-black text-gray-300 hover:text-blue-400 uppercase tracking-widest transition-all duration-300 group bg-white/[0.02] hover:bg-white/[0.05] border border-white/5 hover:border-blue-500/30 px-5 py-3 rounded-xl backdrop-blur-sm"
               >
                 Go to communications panel
