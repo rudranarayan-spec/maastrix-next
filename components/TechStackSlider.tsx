@@ -29,7 +29,7 @@ export default function TechStackSlider() {
         .premium-tech-track {
           display: flex;
           width: max-content;
-          animation: techMarqueeScroll 38s linear infinite;
+          animation: techMarqueeScroll 50s linear infinite;
         }
         .premium-tech-track:hover {
           animation-play-state: paused;

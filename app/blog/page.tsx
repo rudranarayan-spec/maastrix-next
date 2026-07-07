@@ -14,16 +14,16 @@ export const metadata: Metadata = {
     "Enterprise Software Trends"
   ],
   alternates: {
-    canonical: "https://maastrixsolutions.com/blog",
+    canonical: "https://maastrixsolutions.vercel.app/gmail",
   },
   openGraph: {
     title: "Insights, Engineering Tutorials & Tech Trends | Maastrix Solutions",
     description: "Deep dives into high-concurrency Node.js backend architecture, React Native optimization, and enterprise web development.",
-    url: "https://maastrixsolutions.com/blog",
+    url: "https://maastrixsolutions.vercel.app/blog",
     siteName: "Maastrix Solutions",
     images: [
       {
-        url: "https://maastrixsolutions.com/og", // Replace with your actual blog banner image asset
+        url: "https://maastrixsolutions.vercel.app/og", // Replace with your actual blog banner image asset
         width: 1200,
         height: 630,
         alt: "Maastrix Solutions Technical Engineering Journal Banner",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Insights, Engineering Tutorials & Tech Trends | Maastrix Solutions",
     description: "Explore deep dives into custom software engineering, scalable backend setups, and AI application breakthroughs.",
-    images: ["https://maastrixsolutions.com/og"],
+    images: ["https://maastrixsolutions.vercel.app/og"],
   },
 };
 
