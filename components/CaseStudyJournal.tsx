@@ -1,5 +1,5 @@
 "use client";
-
+import Link from "next/link";
 import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { ArrowUpRight, Calendar, User, Sparkles, Terminal } from "lucide-react";
@@ -20,18 +20,18 @@ export default function CaseStudyJournal() {
   }, []);
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative w-full bg-[#f8fafc] text-slate-900 py-24 lg:py-32 overflow-hidden border-t border-slate-200"
       style={{ "--scroll-y": "0" } as React.CSSProperties}
     >
-      
+
       {/* Hydration-Safe Light Technical Ambient Glow Fields */}
-      <div 
+      <div
         className="absolute top-[10%] right-[-5%] w-[500px] h-[500px] bg-blue-500/[0.04] rounded-full blur-[130px] pointer-events-none will-change-transform"
         style={{ transform: "translate3d(0, calc(var(--scroll-y) * 0.06px), 0)" }}
       />
-      <div 
+      <div
         className="absolute bottom-[5%] left-[-5%] w-[450px] h-[450px] bg-indigo-500/[0.04] rounded-full blur-[120px] pointer-events-none will-change-transform"
         style={{ transform: "translate3d(0, calc(var(--scroll-y) * -0.04px), 0)" }}
       />
@@ -40,7 +40,7 @@ export default function CaseStudyJournal() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0f172a02_1px,transparent_1px),linear-gradient(to_bottom,#0f172a02_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_80%,transparent_100%)] pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8 w-full z-10">
-        
+
         {/* Section Heading Setup */}
         <div className="text-left max-w-3xl space-y-4 mb-20">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-white border border-slate-200 shadow-sm">
@@ -84,8 +84,8 @@ function ParallaxCard({ project }: { project: ProjectCard }) {
     const box = card.getBoundingClientRect();
     const x = e.clientX - box.left - box.width / 2;
     const y = e.clientY - box.top - box.height / 2;
-    
-    const rotateX = -(y / (box.height / 2)) * 5; 
+
+    const rotateX = -(y / (box.height / 2)) * 5;
     const rotateY = (x / (box.width / 2)) * 5;
 
     // Fixed: Added translateZ(0) to force hard compositing layers, tracking clean border-radii across Safari and Chrome Engine setups
@@ -130,7 +130,7 @@ function ParallaxCard({ project }: { project: ProjectCard }) {
           <h3 className="text-base sm:text-lg font-black tracking-tight text-slate-950 group-hover:text-blue-600 transition-colors duration-200 leading-snug">
             {project.title}
           </h3>
-          
+
           {/* Business Impact Value */}
           <p className="text-xs text-blue-700 font-bold leading-relaxed bg-blue-50/60 border border-blue-100/50 rounded-lg px-3 py-2">
             <span className="uppercase text-[9px] block tracking-wider font-black text-blue-500 mb-0.5">Impact Vector:</span>
@@ -166,9 +166,15 @@ function ParallaxCard({ project }: { project: ProjectCard }) {
           </div>
         </div>
 
-        <div className="h-8 w-8 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center border border-slate-200/60 group-hover:border-blue-600 shadow-sm transition-all duration-300 shrink-0">
-          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-        </div>
+        <Link
+          href="/blog"
+          className="group focus:outline-none"
+          aria-label="Navigate to architectural logs"
+        >
+          <div className="h-8 w-8 rounded-xl bg-slate-50 text-slate-500 group-hover:bg-blue-600 group-hover:text-white flex items-center justify-center border border-slate-200/60 group-hover:border-blue-600 shadow-sm transition-all duration-300 shrink-0">
+            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </div>
+        </Link>
       </div>
     </div>
   );
