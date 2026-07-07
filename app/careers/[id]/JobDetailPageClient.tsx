@@ -1,32 +1,20 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React from "react";
 import JobDetailHero from "@/components/careers/JobDetailHero";
 import JobDetailsPage from "@/components/careers/JobDetailsPage";
-import { openPositions } from "@/data/careers";
+import { JobPosition } from "@/data/careers"; // Explicitly target your new interface
 
-interface ClientProps {
-  initialJob: typeof openPositions[0];
+interface JobDetailClientProps {
+  activeJob: JobPosition;
 }
 
-export default function JobDetailPageClient({ initialJob }: ClientProps) {
-  // Graceful fallback to initial data, still reactive if needed on client side
-  const activeJob = useMemo(() => {
-    return initialJob || openPositions[0];
-  }, [initialJob]);
-
+export default function JobDetailClient({ activeJob }: JobDetailClientProps) {
   return (
-    <main className="w-full bg-slate-50 min-h-screen">
-      {/* Semantic structural markup signaling a distinct job posting card to crawlers */}
-      <article itemScope itemType="https://schema.org/JobPosting">
-        
-        {/* Pass the retrieved dynamic job data directly into your hero component */}
-        <JobDetailHero job={activeJob} />
-        
-        {/* Pass it down or let JobDetailsPage handle the split layout matrix */}
-        <JobDetailsPage />
-        
-      </article>
-    </main>
+    <div className="w-full bg-slate-50 min-h-screen">
+      {/* Both sub-components now receive perfectly structured data schema context */}
+      <JobDetailHero job={activeJob} />
+      <JobDetailsPage job={activeJob} />
+    </div>
   );
 }
