@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import {
   MapPin,
   Phone,
@@ -25,29 +26,27 @@ export default function Footer() {
 
     setIsSubmitting(true);
     
-    // Simulate API delay
+    // Simulate API network latency delay
     await new Promise((resolve) => setTimeout(resolve, 800));
     
-    // Replace this with your actual toast notification library (e.g., react-hot-toast, sonner)
     alert(`Success! We've received your email (${email}) and subscribed you to our newsletter.`);
     
     setEmail("");
     setIsSubmitting(false);
   };
 
-  // Explicit route map configuration for flexibility
   const footerNavLinks = [
     { label: "Terms & conditions", href: "/legal/terms" },
     { label: "Privacy Policy", href: "/legal/privacy-policy" },
     { label: "FAQs", href: "/support/faq" },
     { label: "Sitemap", href: "/sitemap.xml" },
-    { label: "Blog", href: "/resources/blog" },
-    { label: "Feedback", href: "/company/feedback" },
+    { label: "Blog", href: "/blog" },
+    { label: "Feedback", href: "/feedback" },
     { label: "Contact us", href: "/contact" },
   ];
 
   return (
-    <footer className="relative bg-[#0d0f12] text-gray-400 font-sans overflow-hidden border-t border-white/5 pt-16">
+    <footer className="relative bg-[#0d0f12] text-gray-400 font-sans overflow-hidden border-t border-white/5 pt-10 pb-4">
 
       {/* Premium ambient micro-glow backing */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl pointer-events-none" />
@@ -55,8 +54,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
 
         {/* ROW 1: PRIMARY CORPORATE CONTACT TILES */}
-        {/* Adjusted responsive grid: 1 col on mobile, 2 cols on tablet, 4 cols on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12 border-b border-white/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pb-8 border-b border-white/5">
 
           {/* Location */}
           <div className="group flex gap-4 items-start p-4 rounded-xl bg-white/[0.02] border border-white/5 transition-all duration-300 hover:bg-white/[0.04] hover:border-blue-500/20">
@@ -114,19 +112,35 @@ export default function Footer() {
         </div>
 
         {/* ROW 2: CORE INFORMATION LINKS & TRUST FOOTPRINT */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 pt-8 pb-6">
 
-          {/* About Column */}
-          <div className="sm:col-span-2 lg:col-span-4 space-y-6">
-            <Link href="/" className="text-2xl font-black tracking-wider text-white select-none">
-              MAASTRIX<span className="text-blue-500">.</span>
+          {/* About Column with Tight Inline Flex Logo Brand Identity */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-4">
+            <Link href="/" className="inline-flex items-center gap-3 focus:outline-none group">
+              <div className="relative w-20 h-20 shrink-0">
+                <Image 
+                  src="/assets/images/logo-bg-r.png" 
+                  alt="Maastrix Solutions Logo Icon" 
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+              <div className="flex flex-col justify-center leading-none">
+                <span className="text-lg font-black tracking-wider text-white uppercase group-hover:text-blue-400 transition-colors">
+                  Maastrix
+                </span>
+                <span className="text-[11px] font-bold tracking-widest text-blue-500 uppercase mt-0.5">
+                  Solutions
+                </span>
+              </div>
             </Link>
             <p className="text-xs leading-relaxed text-gray-400 max-w-sm">
               We are a highly effective, learning and fast growing organization. Up till now, our customers have their base in the USA, UK, Canada, Norway, Australia and India.
             </p>
             
             {/* Social Links */}
-            <div className="flex gap-3 pt-2">
+            <div className="flex gap-2.5 pt-1">
               {[
                 {
                   name: "Facebook",
@@ -162,7 +176,7 @@ export default function Footer() {
                   key={i}
                   href={social.url}
                   aria-label={`Follow Maastrix on ${social.name}`}
-                  className="p-2.5 rounded-full bg-white/5 text-gray-400 transition-all duration-300 hover:bg-blue-600 hover:text-white hover:-translate-y-1"
+                  className="p-2 rounded-full bg-white/5 text-gray-400 transition-all duration-300 hover:bg-blue-600 hover:text-white hover:-translate-y-0.5"
                 >
                   {social.svg}
                 </a>
@@ -170,16 +184,16 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links Map */}
-          <div className="sm:col-span-2 lg:col-span-4 grid grid-cols-2 gap-6">
+          {/* Quick Links Tree */}
+          <div className="sm:col-span-2 lg:col-span-4 grid grid-cols-2 gap-4">
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5 border-l-2 border-blue-500 pl-3">
+              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-3.5 border-l-2 border-blue-500 pl-3">
                 Quick Link
               </h4>
-              <ul className="space-y-3 text-xs">
-                {["Services", "Our Team", "Contact Us"].map((link) => (
+              <ul className="space-y-2 text-xs">
+                {["Services", "Our Team", "Contact"].map((link) => (
                   <li key={link}>
-                    <Link href={`#${link.toLowerCase().replace(" ", "")}`} className="flex items-center gap-1 hover:text-white transition-colors duration-200 group">
+                    <Link href={`/${link.toLowerCase().replace(" ", "")}`} className="flex items-center gap-1 hover:text-white transition-colors duration-200 group">
                       <span className="w-0 h-0.5 bg-blue-500 transition-all duration-200 group-hover:w-2" />
                       {link}
                     </Link>
@@ -188,13 +202,13 @@ export default function Footer() {
               </ul>
             </div>
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-5 border-l-2 border-blue-500 pl-3">
+              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-3.5 border-l-2 border-blue-500 pl-3">
                 Resources
               </h4>
-              <ul className="space-y-3 text-xs">
+              <ul className="space-y-2 text-xs">
                 {["Portfolio", "Careers", "Blog"].map((link) => (
                   <li key={link}>
-                    <Link href={`#${link.toLowerCase()}`} className="flex items-center gap-1 hover:text-white transition-colors duration-200 group">
+                    <Link href={`${link.toLowerCase()}`} className="flex items-center gap-1 hover:text-white transition-colors duration-200 group">
                       <span className="w-0 h-0.5 bg-blue-500 transition-all duration-200 group-hover:w-2" />
                       {link}
                     </Link>
@@ -204,10 +218,10 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter & Trust Badges */}
-          <div className="sm:col-span-2 lg:col-span-4 space-y-6">
+          {/* Newsletter Input Framework & Compliance Seals */}
+          <div className="sm:col-span-2 lg:col-span-4 space-y-4">
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-4">
+              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-2.5">
                 Newsletter
               </h4>
               <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2 max-w-sm sm:max-w-none lg:max-w-sm">
@@ -218,12 +232,12 @@ export default function Footer() {
                   placeholder="Subscribe with us"
                   required
                   disabled={isSubmitting}
-                  className="w-full rounded-sm bg-white/5 border border-white/10 px-4 py-2.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 transition-colors disabled:opacity-50"
+                  className="w-full rounded-sm bg-white/5 border border-white/10 px-3 py-1.5 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-blue-500/50 transition-colors disabled:opacity-50"
                 />
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-1 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-all duration-200 shrink-0 disabled:opacity-50"
+                  className="inline-flex items-center justify-center gap-1 px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider rounded-sm transition-all duration-200 shrink-0 disabled:opacity-50"
                 >
                   {isSubmitting ? "Subscribing..." : "Subscribe"} <ArrowUpRight className="h-3 w-3" />
                 </button>
@@ -231,16 +245,16 @@ export default function Footer() {
             </div>
 
             {/* Verification Credentials Row */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
-              <div className="bg-white rounded-sm p-1.5 flex items-center justify-center border border-white/10 h-14 w-28 relative">
-                <div className="text-[10px] text-slate-900 font-black text-center leading-none">
+            <div className="flex flex-wrap items-center gap-3 pt-0.5">
+              <div className="bg-white rounded-sm p-1 flex items-center justify-center border border-white/10 h-10 w-24 relative select-none">
+                <div className="text-[9px] text-slate-900 font-black text-center leading-none">
                   ISO 9001:2015 <br />
-                  <span className="text-[8px] font-medium text-slate-500">CERTIFIED</span>
+                  <span className="text-[7px] font-medium text-slate-500">CERTIFIED</span>
                 </div>
               </div>
 
-              <div className="bg-white rounded-sm p-1 flex items-center justify-center h-14 w-14 relative overflow-hidden">
-                <div className="w-11 h-11 border-2 border-slate-900 border-dashed opacity-40 animate-spin" style={{ animationDuration: '20s' }} />
+              <div className="bg-white rounded-sm p-1 flex items-center justify-center h-10 w-10 relative overflow-hidden select-none">
+                <div className="w-7 h-7 border border-slate-900 border-dashed opacity-30 animate-spin" style={{ animationDuration: '24s' }} />
                 <span className="absolute text-[8px] text-slate-900 font-bold">QR</span>
               </div>
             </div>
@@ -249,10 +263,10 @@ export default function Footer() {
         </div>
 
         {/* ROW 3: COMPLIANCE ADMINISTRATIVE MATRIX & TOP FLOATER */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 py-8 border-t border-white/5 text-[11px] text-center md:text-left">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-3 py-4 border-t border-white/5 text-[11px] text-center md:text-left">
           <p>© Copyrights 2026 Maastrixsolutions | All Rights Reserved</p>
 
-          <div className="flex flex-wrap gap-x-4 gap-y-2 text-gray-500 justify-center">
+          <div className="flex flex-wrap gap-x-4 gap-y-1 text-gray-500 justify-center">
             {footerNavLinks.map((item) => (
               <Link key={item.label} href={item.href} className="hover:text-gray-300 transition-colors">
                 {item.label}
@@ -267,7 +281,7 @@ export default function Footer() {
       <button
         onClick={scrollToTop}
         aria-label="Back to top"
-        className="absolute bottom-6 right-6 p-3 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:-translate-y-1 transition-all duration-300 group z-20"
+        className="absolute bottom-4 right-4 p-2 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-xl hover:-translate-y-0.5 transition-all duration-300 group z-20"
       >
         <ChevronUp className="h-4 w-4 transition-transform duration-300 group-hover:scale-110" />
       </button>

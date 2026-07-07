@@ -52,7 +52,7 @@ export default function HeroWhoWeAre() {
 
           <p className="mt-5 text-base leading-8 text-slate-400">
             Our journey includes global collaboration and strategic exposure
-            with organizations such as Michigan-based Alpha Synopsys, an Inc
+            with organizations such as St.Louis-based Alpha Synopsys, an Inc
             500 listed company. Today, we serve clients across the US, Canada,
             UK, Australia, Switzerland and Europe with disciplined engineering,
             transparent communication and long-term partnership.

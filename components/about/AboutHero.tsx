@@ -78,10 +78,10 @@ export default function AboutHero() {
           <div className="md:col-span-4 space-y-6 md:pl-4 lg:pl-6 mt-8 md:mt-0">
             <div className="space-y-4 text-xs lg:text-sm text-gray-400 leading-relaxed font-medium">
               <p>
-                We are one of the top players leading the current web designing industry. Headquartered in Michigan, we have the solutions to offer which are tailor-made according to your requirements. We have also collaborated and formed alliances with companies belonging to similar traditions and businesses across the globe.
+                We are one of the top players leading the current web designing industry. Headquartered in St.Louis, we have the solutions to offer which are tailor-made according to your requirements. We have also collaborated and formed alliances with companies belonging to similar traditions and businesses across the globe.
               </p>
               <p>
-                To expand our global reaches, we successfully engineered a high-impact corporate alliance with Michigan-based <span className="text-white font-semibold">Alpha Synopsys</span>—an Inc 500 listed IT powerhouse sharing our dedicated technical values—allowing us to scale enterprise operations while keeping our own unique identity intact.
+                To expand our global reaches, we successfully engineered a high-impact corporate alliance with St.Louis-based <span className="text-white font-semibold">Alpha Synopsys</span>—an Inc 500 listed IT powerhouse sharing our dedicated technical values—allowing us to scale enterprise operations while keeping our own unique identity intact.
               </p>
               <p>
                 Our global clients span across the US, Canada, UK, Australia, Switzerland, and Europe. While their unique technical blueprints differ, our primary directive remains exact: deliver high-quality, high-converting digital ecosystems that meet corporate business needs today and secure their goals for tomorrow.

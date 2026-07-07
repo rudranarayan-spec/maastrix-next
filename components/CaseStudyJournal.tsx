@@ -73,6 +73,7 @@ export default function CaseStudyJournal() {
 }
 
 // Sub-Component: 3D Mouse Parallax Hover Element
+// Optimized with CSS compositing layers to fix cross-browser boundary masking bugs
 function ParallaxCard({ project }: { project: ProjectCard }) {
   const cardRef = useRef<HTMLDivElement>(null);
 
@@ -87,15 +88,16 @@ function ParallaxCard({ project }: { project: ProjectCard }) {
     const rotateX = -(y / (box.height / 2)) * 5; 
     const rotateY = (x / (box.width / 2)) * 5;
 
-    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+    // Fixed: Added translateZ(0) to force hard compositing layers, tracking clean border-radii across Safari and Chrome Engine setups
+    card.style.transform = `perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01) translateZ(0)`;
     card.style.transition = "transform 0.08s ease-out";
   };
 
   const handleMouseLeave = () => {
     const card = cardRef.current;
     if (!card) return;
-    card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)";
-    card.style.transition = "transform 0.35s cubic-bezier(0.25, 1, 0.5, 1)";
+    card.style.transform = "perspective(1200px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1) translateZ(0)";
+    card.style.transition = "transform(0.35s) cubic-bezier(0.25, 1, 0.5, 1)";
   };
 
   return (
@@ -103,11 +105,12 @@ function ParallaxCard({ project }: { project: ProjectCard }) {
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="group bg-white border border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 will-change-transform"
+      className="group bg-white border border-slate-200 rounded-2xl overflow-hidden flex flex-col justify-between shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 will-change-transform isolate"
     >
       <div className="space-y-6">
         {/* Aspect-Locked Media Base Layer */}
-        <div className="relative aspect-[16/10] w-full bg-slate-50 overflow-hidden border-b border-slate-100 shrink-0">
+        {/* Fixed: Added mask-image property along with overflow-hidden to lock down image corners perfectly on Safari */}
+        <div className="relative aspect-[16/10] w-full bg-slate-50 overflow-hidden border-b border-slate-100 shrink-0 [mask-image:linear-gradient(white,white)]">
           <Image
             src={project.imgSrc}
             alt={project.title}

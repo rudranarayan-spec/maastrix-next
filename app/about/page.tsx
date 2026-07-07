@@ -7,8 +7,8 @@ import CaseStudyJournal from "@/components/CaseStudyJournal";
 
 export const metadata = {
   title: "About Maastrix Solutions | Enterprise Web & IT Engineering Leader",
-  description: "Founded in 2004 and headquartered in Michigan, Maastrix Solutions delivers premier tailor-made web design, E2E portals, and IT application development services globally.",
-  keywords: ["Web Design Industry", "IT Solutions Michigan", "Maastrix Solutions", "Enterprise Web Development"],
+  description: "Founded in 2004 and headquartered in St.Louis, Maastrix Solutions delivers premier tailor-made web design, E2E portals, and IT application development services globally.",
+  keywords: ["Web Design Industry", "IT Solutions St.Louis", "Maastrix Solutions", "Enterprise Web Development"],
 };
 
 export default function Home() {
