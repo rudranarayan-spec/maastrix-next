@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { MapPin, Phone, Mail, Globe, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Mail, Globe } from "lucide-react";
 
 export default function Footer() {
   const [email, setEmail] = useState("");
@@ -93,7 +93,7 @@ export default function Footer() {
             <div>
               <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-4 border-l-2 border-blue-600 pl-3">Quick Link</h4>
               <ul className="space-y-3 text-[11px]">
-                {["Services", "Our Team", "Contact"].map((link) => (
+                {["Services", "Contact"].map((link) => (
                   <li key={link}><Link href={`/${link.toLowerCase().replace(" ", "")}`} className="hover:text-blue-400 transition-colors">{link}</Link></li>
                 ))}
               </ul>
