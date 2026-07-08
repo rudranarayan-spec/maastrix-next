@@ -72,15 +72,15 @@ export default function AboutStory() {
             </ul>
 
             {/* INTERACTIVE CALL-TO-ACTION LINK */}
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <a 
-                href="#portfolio"
+                href=""
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-slate-950 uppercase tracking-wider group hover:text-blue-600 transition-colors duration-300"
               >
                 Explore Our System Portfolio
                 <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
               </a>
-            </div>
+            </div> */}
 
           </div>
 

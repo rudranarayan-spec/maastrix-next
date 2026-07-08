@@ -170,7 +170,7 @@ export default function ServiceGridSection() {
                     </p>
                   </div>
 
-                  <div className="pt-5 sm:pt-0">
+                  {/* <div className="pt-5 sm:pt-0">
                     <a
                       href={`/services/${service.id}`}
                       className="inline-flex items-center gap-1.5 text-xs font-black text-slate-900 group-hover:text-blue-600 uppercase tracking-widest transition-colors duration-200"
@@ -178,7 +178,7 @@ export default function ServiceGridSection() {
                       Interface Details
                       <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
                     </a>
-                  </div>
+                  </div> */}
                 </div>
 
               </div>

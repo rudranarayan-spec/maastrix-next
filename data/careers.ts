@@ -17,7 +17,7 @@ export const openPositions: JobPosition[] = [
     id: "full-stack-developer",
     title: "Full Stack Developer",
     department: "Engineering",
-    location: "Acharya bihar, Bhubaneswar",
+    location: "Bhubaneswar",
     type: "Full-Time",
     experience: "6 months",
     description: "Architect high-concurrency API gateways, harden core middleware pipelines, and manage scalable relational databases (PostgreSQL/MariaDB) integrated with AI infrastructure.",
@@ -36,7 +36,7 @@ export const openPositions: JobPosition[] = [
       "Demonstrated depth with secure authentication configurations, API key rotation, and custom middleware design.",
       "Excellent debugging profile, utilizing systemic logging systems and crash management engines like Sentry."
     ],
-    preferredStack: ["Node.js", "Express", "TypeScript", "Python", "MariaDB", "Supabase", "OpenAI API", "Sentry"]
+    preferredStack: ["Node.js", "Express", "TypeScript", "Next.js", "MariaDB", "Supabase", "OpenAI API", "Sentry"]
   },
   {
     id: "sr-backend-developer",
