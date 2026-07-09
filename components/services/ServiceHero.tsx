@@ -16,7 +16,7 @@ export default function ServiceHero() {
     }, []);
 
     return (
-        <section className="relative w-full min-h-[600px] lg:h-[80vh] lg:min-h-[700px] bg-[#0d0f12] text-white overflow-hidden flex items-center border-b border-white/5">
+        <section className="relative w-full min-h-[600px] lg:h-[80vh] lg:min-h-[700px] bg-[#0d0f12] text-white overflow-hidden flex items-center border-b pt-20 border-white/5">
 
             {/* =========================================================================
           PARALLAX BACKING METRIC (Inspired by the flowing background curves in image_68f779.jpg)

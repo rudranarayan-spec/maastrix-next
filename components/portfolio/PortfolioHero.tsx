@@ -6,7 +6,7 @@ import { Terminal, Lightbulb, Workflow, Network } from "lucide-react";
 
 export default function PortfolioHero() {
     return (
-        <section className="relative bg-[#0d0f12] text-white font-sans pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-white/5">
+        <section className="relative bg-[#0d0f12] text-white font-sans pt-30 pb-16 lg:pt-32 lg:pb-24 overflow-hidden border-b border-white/5">
 
             {/* Premium ambient micro-glow backing assets */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />

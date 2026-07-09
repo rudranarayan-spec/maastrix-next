@@ -6,7 +6,7 @@ import { Play, Sparkles, ShieldCheck } from "lucide-react";
 
 export default function AboutHero() {
   return (
-    <section className="relative min-h-screen bg-[#0d0f12] text-white font-sans overflow-hidden pt-24 pb-20 lg:pt-32 lg:pb-28">
+    <section className="relative min-h-screen bg-[#0d0f12] text-white font-sans overflow-hidden pt-30 pb-20 lg:pt-32 lg:pb-28">
       
       {/* PURE PARALLAX LAYER ENGINE */}
       {/* Creates ambient, immersive organic depths as the user scrolls */}

@@ -20,7 +20,7 @@ export default function ContactHero() {
   return (
     <section 
       className="relative w-full min-h-[500px] sm:min-h-[580px] flex items-center bg-[#0d0f12] overflow-hidden border-b border-white/5 
-                 pt-20 sm:pt-28 lg:pt-32 pb-16 sm:pb-20" /* Prevents sliding under your fixed/absolute navbar */
+                 pt-30 sm:pt-28 lg:pt-32 pb-16 sm:pb-20" /* Prevents sliding under your fixed/absolute navbar */
     >
       
       {/* =========================================================================

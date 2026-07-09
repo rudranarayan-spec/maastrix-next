@@ -32,7 +32,7 @@ export default function CareersPage() {
   }, [activeDept]);
 
   return (
-    <div className="w-full bg-[#0d0f12]">
+    <div className="w-full pt-20 bg-[#0d0f12]">
 
       {/* =========================================================================
           SECTION 1: PREMIUM HERO BLOCK (Dark Premium Theme)
