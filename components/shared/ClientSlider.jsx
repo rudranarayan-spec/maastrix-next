@@ -17,8 +17,8 @@ export default function ClientSlider() {
           
           {/* Accent-Style Header Block (Anchored Left, just like modern consultant frameworks) */}
           <div className="lg:pr-6 text-center lg:text-left z-10 border-b lg:border-b-0 lg:border-r border-border-subtle pb-6 lg:pb-0">
-            <span className="text-[11px] font-bold uppercase tracking-widest text-primary">
-              Our Ecosystem
+            <span className="text-[13px] font-bold uppercase tracking-widest text-primary">
+              OUR CLIENTS
             </span>
             <h2 className="text-base font-extrabold tracking-tight text-secondary uppercase mt-1 leading-snug">
               Trusted by <br className="hidden lg:block"/> Global Partners
