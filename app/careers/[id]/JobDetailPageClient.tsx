@@ -5,6 +5,7 @@ import JobDetailHero from "@/components/careers/JobDetailHero";
 import JobDetailsPage from "@/components/careers/JobDetailsPage";
 import { JobPosition } from "@/data/careers"; // Explicitly target your new interface
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 interface JobDetailClientProps {
   activeJob: JobPosition;
@@ -17,6 +18,7 @@ export default function JobDetailClient({ activeJob }: JobDetailClientProps) {
       <Navbar isTransparent={true} />
       <JobDetailHero job={activeJob} />
       <JobDetailsPage job={activeJob} />
+      <Footer/>
     </div>
   );
 }

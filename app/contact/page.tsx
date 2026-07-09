@@ -4,6 +4,7 @@ import ContactHero from "@/components/contact/ContactHero";
 import ContactSection from "@/components/contact/ContactSection";
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Production SEO Metadata Configuration for the Contact Page
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export default function ContactLayoutPage() {
       <ContactHero />
       <ContactSection />
       <CompanyMap />
+      <Footer/>
     </main>
   );
 }

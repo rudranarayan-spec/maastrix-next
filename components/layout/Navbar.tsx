@@ -51,7 +51,7 @@ export default function Navbar({ isTransparent = false }: { isTransparent?: bool
         <Link href="/" className="flex items-center select-none group relative">
         
           <div
-            className={`relative shrink-0 transition-all duration-300 ease-in-out ${isScrolled ? "w-25 h-25" : "w-32 h-32"
+            className={`relative shrink-0 transition-all duration-300 ease-in-out ${isScrolled ? "w-25 h-25" : "w-35 h-35"
               }`}
           >
             <Image

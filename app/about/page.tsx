@@ -6,6 +6,7 @@ import AboutTestimonials from "@/components/about/AboutTestimonal";
 import OurTeamSection from "@/components/about/OurTeamSection";
 import CaseStudyJournal from "@/components/CaseStudyJournal";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Comprehensive SEO Metadata Configuration
 export const metadata: Metadata = {
@@ -56,6 +57,7 @@ export default function AboutPage() {
       <OurTeamSection />
       <CaseStudyJournal />
       <AboutTestimonials />
+      <Footer/>
     </main>
   );
 }

@@ -4,6 +4,7 @@ import PortfolioShowcase from "@/components/portfolio/PortfolioShowcases";
 import TechStackSlider from "@/components/TechStackSlider";
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Production SEO Metadata Configuration for the Portfolio Hub
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function PortfolioLayoutPage() {
       <PortfolioHero />
       <PortfolioShowcase />
       <TechStackSlider />
+      <Footer/>
     </main>
   );
 }

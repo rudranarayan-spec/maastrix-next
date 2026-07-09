@@ -32,7 +32,6 @@ export default function RootLayout({
       <body>
         {children}
         <CookieConsent/>
-        <Footer/>
         <ScrollToTop />
       </body>
     </html>

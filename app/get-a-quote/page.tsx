@@ -3,6 +3,7 @@ import QuoteForm from "@/components/getaQuote/QuoteForm";
 import QuoteHero from "@/components/getaQuote/QuoteHero";
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Production SEO Metadata Configuration for the Get a Quote/Project Scoping Page
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function GetAQuoteLayoutPage() {
       <Navbar isTransparent={true} />
       <QuoteHero />
       <QuoteForm />
+      <Footer/>
     </main>
   );
 }

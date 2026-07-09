@@ -4,6 +4,7 @@ import ServiceHero from "@/components/services/ServiceHero";
 import TechStackSlider from "@/components/TechStackSlider";
 import React from "react";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Production SEO Metadata Configuration for the Services Page
 export const metadata: Metadata = {
@@ -51,6 +52,7 @@ export default function ServicesLayoutPage() {
       <ServiceHero />
       <ServiceGridSection />
       <TechStackSlider />
+      <Footer/>
     </main>
   );
 }

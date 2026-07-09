@@ -6,6 +6,7 @@ import WhyChooseUs from "@/components/WhyChooseUs";
 import CaseStudyJournal from "@/components/CaseStudyJournal";
 import ProjectCTA from "@/components/ProjectCTA";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Core SEO Metadata Configuration 
 export const metadata: Metadata = {
@@ -58,6 +59,7 @@ export default function Home() {
       <ProjectCTA />
       <CaseStudyJournal />
       <ClientSlider />
+      <Footer/>
     </main>
   );
 }

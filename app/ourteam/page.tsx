@@ -1,3 +1,4 @@
+import Footer from '@/components/layout/Footer'
 import Navbar from '@/components/layout/Navbar'
 import TeamHero from '@/components/team/TeamHero'
 import TeamProfiles from '@/components/team/TeamProfile'
@@ -9,6 +10,7 @@ const page = () => {
       <Navbar isTransparent={true} />
       <TeamHero />
       <TeamProfiles />
+      <Footer/>
     </div>
   )
 }

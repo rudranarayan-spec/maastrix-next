@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import BlogHero from "@/components/blog/BlogHero";
 import BlogListMatrix from "@/components/blog/BlogListMatrix";
 import Navbar from "@/components/layout/Navbar";
+import Footer from "@/components/layout/Footer";
 
 // Production SEO Metadata Configuration for the Blog Feed
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function BlogPage() {
       <Navbar isTransparent={true} />
       <BlogHero />
       <BlogListMatrix />
+      <Footer/>
     </main>
   );
 }
