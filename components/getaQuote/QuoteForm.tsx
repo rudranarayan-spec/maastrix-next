@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Send, CheckCircle, ShieldCheck, AlertCircle, Building2, Globe2 } from "lucide-react";
+import { sendQuoteMailAction } from "@/actions/sendQuoteMailAction";
 
 export default function QuoteForm() {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
@@ -10,25 +11,29 @@ export default function QuoteForm() {
     e.preventDefault();
     setFormStatus("submitting");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    // Web3Forms access key safely pulled from client environment variables
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
-    formData.append("access_key", accessKey);
+    const payload = {
+      name: String(formData.get("name") || ""),
+      email: String(formData.get("email") || ""),
+      phone: String(formData.get("phone") || ""),
+      country: String(formData.get("country") || ""),
+      message: String(formData.get("message") || ""),
+      preferredContact: "email" as const,
+    };
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      const result = await sendQuoteMailAction(payload);
 
-      const data = await res.json();
-      if (data.success) {
+      if (result.success) {
         setFormStatus("success");
+        form.reset();
       } else {
         setFormStatus("error");
       }
     } catch (err) {
+      console.error("Quote form submit error:", err);
       setFormStatus("error");
     }
   };
@@ -75,13 +80,6 @@ export default function QuoteForm() {
 
         {/* Core Submission Interface */}
         <form onSubmit={handleSubmit} className="space-y-8">
-          {/* Web3Forms Honeypot Anti-Spam */}
-          <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
-          <input
-            type="hidden"
-            name="subject"
-            value="[INBOUND RFP] New Project Quote Request"
-          />
 
           {/* 1. Core Profile Identity Layer */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

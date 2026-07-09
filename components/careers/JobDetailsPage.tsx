@@ -15,6 +15,7 @@ import {
   FileText
 } from "lucide-react";
 import { JobPosition } from "@/data/careers"; // Import the strict interface
+import { sendJobApplicationMailAction } from "@/actions/sendJobApplicationMailAction";
 
 interface JobDetailsPageProps {
   job: JobPosition; // Hand off direct context loop from server
@@ -35,42 +36,32 @@ export default function JobDetailsPage({ job }: JobDetailsPageProps) {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleFormSubmit = async (e: React.FormEvent) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("submitting");
 
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
-    
-    const payload = {
-      access_key: accessKey,
-      subject: `[CAREERS] - New Application for ${job.title}`,
-      "Target Role": job.title,
-      "Engineering Division": job.department,
-      "Full Name": formData.fullName,
-      "Email Address": formData.email,
-      "Portfolio / GitHub": formData.portfolioUrl,
-      "Resume URL Link": formData.resumeUrl,
-      "Cover Note / Details": formData.coverLetter
-    };
-
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: JSON.stringify(payload),
+      const result = await sendJobApplicationMailAction({
+        fullName: formData.fullName,
+        email: formData.email,
+        portfolioUrl: formData.portfolioUrl,
+        resumeUrl: formData.resumeUrl,
+        coverLetter: formData.coverLetter,
+
+        position: job.title,
+        department: job.department,
+        location: job.location,
+        experience: job.experience,
+        employmentType: job.type,
       });
 
-      const data = await response.json();
-      if (data.success) {
+      if (result.success) {
         setFormStatus("success");
       } else {
         setFormStatus("error");
       }
-    } catch (err) {
-      console.error("Submission pipeline exception caught:", err);
+    } catch (error) {
+      console.error("Job application submit error:", error);
       setFormStatus("error");
     }
   };

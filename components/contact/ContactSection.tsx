@@ -10,6 +10,9 @@ import {
   CheckCircle2,
   AlertCircle
 } from "lucide-react";
+import { sendCareerMailAction } from "@/actions/sendCareerMailAction";
+import { sendQuoteMailAction } from "@/actions/sendQuoteMailAction";
+import { sendContactMailAction } from "@/actions/sendContactMailAction";
 
 export default function ContactSection() {
   const [formState, setFormState] = useState({
@@ -28,41 +31,40 @@ export default function ContactSection() {
     e.preventDefault();
     setFormStatus("submitting");
 
-    const formData = new FormData();
-
-    const categoryLabels: Record<string, string> = {
-      project: "Launch Project",
-      career: "Join Team / Career",
-      general: "General Inquiry"
-    };
-    const currentLabel = categoryLabels[formState.category] || "General";
-
-    // Web3Forms will capture this string as the exact Email Header subject text
-    formData.append("subject", `[CONTACT HUB] - ${currentLabel} Submission`);
-
-    // Explicitly append all structured states into the dynamic Form payload mapping
-    formData.append("Inquiry Category", formState.category);
-    formData.append("Name", formState.name);
-    formData.append("Email", formState.email);
-    formData.append("Phone", formState.phone);
-    formData.append("Physical Address", formState.address || "Not Provided");
-    formData.append("Message Log", formState.message);
-    formData.append("Preferred Method of Contact", formState.preferredContact);
-
-    // Integrate your Web3Forms access verification routing token
-    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "";
-    formData.append("access_key", accessKey);
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      });
+      let result;
 
-      const data = await res.json();
-      if (data.success) {
+      if (formState.category === "career") {
+        result = await sendCareerMailAction({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          address: formState.address,
+          message: formState.message,
+        });
+      } else if (formState.category === "project") {
+        result = await sendQuoteMailAction({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          address: formState.address,
+          message: formState.message,
+          preferredContact: formState.preferredContact as "email" | "phone",
+        });
+      } else {
+        result = await sendContactMailAction({
+          name: formState.name,
+          email: formState.email,
+          phone: formState.phone,
+          address: formState.address,
+          message: formState.message,
+          preferredContact: formState.preferredContact as "email" | "phone",
+        });
+      }
+
+      if (result.success) {
         setFormStatus("success");
-        // Flash clear parameters back to baseline status defaults
+
         setFormState({
           category: "project",
           name: "",
@@ -70,15 +72,15 @@ export default function ContactSection() {
           phone: "",
           address: "",
           message: "",
-          preferredContact: "email"
+          preferredContact: "email",
         });
 
-        // Revert submission overlay back after a smooth viewing break interval
         setTimeout(() => setFormStatus("idle"), 5000);
       } else {
         setFormStatus("error");
       }
-    } catch (err) {
+    } catch (error) {
+      console.error("Contact form submit error:", error);
       setFormStatus("error");
     }
   };
@@ -185,7 +187,7 @@ export default function ContactSection() {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Web3Forms Honeypot Anti-Spam */}
-              <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} />
+              {/* <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} /> */}
 
               {/* INQUIRY CATEGORY BAR */}
               <div className="space-y-3">
@@ -321,7 +323,7 @@ export default function ContactSection() {
               {formStatus === "error" && (
                 <div className="p-4 bg-rose-50 border border-rose-100 rounded-xl flex items-center gap-3 text-rose-700 text-xs font-bold">
                   <AlertCircle className="h-4 w-4 shrink-0" />
-                  <span>Network submission failed. Verify your access key parameter configuration or connection metrics.</span>
+                  <span>Submission failed. Please try again or contact us directly by email.</span>
                 </div>
               )}
 
