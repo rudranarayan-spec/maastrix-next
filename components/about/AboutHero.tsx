@@ -90,12 +90,13 @@ export default function AboutHero() {
 
             {/* CTA Layer Matrix */}
             <div className="flex items-center justify-between gap-4 pt-4 border-t border-white/5">
-              <button className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-[#0d0f12] text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-blue-600 hover:text-white hover:scale-105 active:scale-95 group">
+              {/* <button className="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-white text-[#0d0f12] text-xs font-bold uppercase tracking-wider transition-all duration-300 hover:bg-blue-600 hover:text-white hover:scale-105 active:scale-95 group">
                 <span className="p-1 rounded-full bg-[#0d0f12]/10 group-hover:bg-white/20 transition-colors">
                   <Play className="h-3 w-3 fill-current" />
                 </span>
                 Play Showreel
-              </button>
+              </button> */}
+              <div></div>
 
               {/* Decorative Geometric Star Accent */}
               <div className="relative h-9 w-9 text-blue-500/80 animate-[spin_16s_linear_infinite] flex-shrink-0 select-none">
