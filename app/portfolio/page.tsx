@@ -3,6 +3,7 @@ import PortfolioHero from "@/components/portfolio/PortfolioHero";
 import PortfolioShowcase from "@/components/portfolio/PortfolioShowcases";
 import TechStackSlider from "@/components/TechStackSlider";
 import React from "react";
+import Navbar from "@/components/layout/Navbar";
 
 // Production SEO Metadata Configuration for the Portfolio Hub
 export const metadata: Metadata = {
@@ -45,6 +46,8 @@ export const metadata: Metadata = {
 export default function PortfolioLayoutPage() {
   return (
     <main>
+      <Navbar isTransparent={true} />
+
       <PortfolioHero />
       <PortfolioShowcase />
       <TechStackSlider />

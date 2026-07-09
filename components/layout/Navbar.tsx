@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
@@ -16,9 +16,19 @@ const navLinks = [
   { name: "Contact", href: "/contact" },
 ];
 
-export default function Navbar() {
+export default function Navbar({ isTransparent = false }: { isTransparent?: boolean }) {
+  const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Trigger solid background once scrolled past 80px
+      setIsScrolled(window.scrollY > 80);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Helper function to evaluate if a route or its nested sub-routes are active
   const isLinkActive = (href: string) => {
@@ -29,14 +39,21 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-white/5 bg-black/40 backdrop-blur-md">
+    <header
+      className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 will-change-transform ${isScrolled || !isTransparent
+        ? "bg-black/80 backdrop-blur-md border-b border-white/10 h-24" // Solid state: fixed height
+        : "bg-transparent border-transparent h-28" // Transparent state: taller, no border
+        }`}
+    >
       <nav className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
 
         {/* IMAGE LOGO BRANDING */}
         <Link href="/" className="flex items-center select-none group relative">
-          {/* Increased size: w-28 h-28 (112px). We add a subtle negative margin 
-      if you want it to "break" the navbar, but absolute sizing is safer here. */}
-          <div className="relative w-28 h-28 shrink-0 transition-transform duration-300">
+        
+          <div
+            className={`relative shrink-0 transition-all duration-300 ease-in-out ${isScrolled ? "w-25 h-25" : "w-32 h-32"
+              }`}
+          >
             <Image
               src="/assets/images/logo-bg-r.png"
               alt="Maastrix Solutions Logo"
@@ -57,7 +74,7 @@ export default function Navbar() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-xs font-bold uppercase tracking-widest transition-colors duration-200 relative py-1 ${active
+                className={`text-sm font-bold uppercase tracking-widest transition-colors duration-200 relative py-1 ${active
                   ? "text-blue-500 font-extrabold"
                   : "text-gray-300 hover:text-blue-400"
                   }`}

@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import CareersPage from "@/components/careers/CareersPage";
 import React from "react";
+import Navbar from "@/components/layout/Navbar";
 
 // Production SEO Metadata Configuration for the Careers Page
 export const metadata: Metadata = {
@@ -43,6 +44,7 @@ export const metadata: Metadata = {
 export default function CareersLayoutPage() {
   return (
     <main>
+      <Navbar isTransparent={true} />
       <CareersPage />
     </main>
   );

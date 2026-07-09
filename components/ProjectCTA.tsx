@@ -80,7 +80,7 @@ export default function ProjectCTA() {
             <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-white transition-colors duration-200" />
           </Link>
           
-          <div className="flex items-center gap-2 text-xs font-bold text-gray-500 tracking-wide">
+          <div className="flex items-center gap-2 text-sm font-bold text-gray-500 tracking-wide">
             <Terminal className="h-4 w-4 text-emerald-500" />
             <span>Direct pipeline assignment within 24 hours</span>
           </div>

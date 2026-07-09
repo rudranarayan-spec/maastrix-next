@@ -3,6 +3,7 @@ import CompanyMap from "@/components/contact/CompanyMap";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactSection from "@/components/contact/ContactSection";
 import React from "react";
+import Navbar from "@/components/layout/Navbar";
 
 // Production SEO Metadata Configuration for the Contact Page
 export const metadata: Metadata = {
@@ -45,6 +46,7 @@ export const metadata: Metadata = {
 export default function ContactLayoutPage() {
   return (
     <main>
+      <Navbar isTransparent={true} />
       <ContactHero />
       <ContactSection />
       <CompanyMap />

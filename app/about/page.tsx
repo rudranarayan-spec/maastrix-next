@@ -5,6 +5,7 @@ import AboutStory from "@/components/about/AboutStory";
 import AboutTestimonials from "@/components/about/AboutTestimonal";
 import OurTeamSection from "@/components/about/OurTeamSection";
 import CaseStudyJournal from "@/components/CaseStudyJournal";
+import Navbar from "@/components/layout/Navbar";
 
 // Comprehensive SEO Metadata Configuration
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <main>
+      <Navbar isTransparent={true} />
       <AboutHero />
       <AboutProcess />
       <AboutStory />

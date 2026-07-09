@@ -30,7 +30,6 @@ export default function RootLayout({
     // Apply the font class directly to the HTML tag globally
     <html lang="en" className={cn(jakarta.className, "font-sans", geist.variable)}>
       <body>
-        <Navbar/>
         {children}
         <CookieConsent/>
         <Footer/>

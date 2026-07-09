@@ -3,6 +3,7 @@ import ServiceGridSection from "@/components/services/ServiceGridSection";
 import ServiceHero from "@/components/services/ServiceHero";
 import TechStackSlider from "@/components/TechStackSlider";
 import React from "react";
+import Navbar from "@/components/layout/Navbar";
 
 // Production SEO Metadata Configuration for the Services Page
 export const metadata: Metadata = {
@@ -45,6 +46,8 @@ export const metadata: Metadata = {
 export default function ServicesLayoutPage() {
   return (
     <main>
+      <Navbar isTransparent={true} />
+
       <ServiceHero />
       <ServiceGridSection />
       <TechStackSlider />

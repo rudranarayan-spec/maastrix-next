@@ -20,7 +20,7 @@ const HeroSection = () => {
       }}
     >
       {/* Dynamic structural spacing beneath fixed navigation bar */}
-      <div className="h-20"></div>
+      {/* <div className="h-20"></div> */}
 
       {/* Main Core Copy Wrapper (Fully SEO Aligned) */}
       <div className="flex-grow flex flex-col items-center justify-center text-center px-4 max-w-5xl mx-auto my-16 relative z-10">
