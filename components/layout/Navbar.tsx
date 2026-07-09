@@ -51,7 +51,7 @@ export default function Navbar({ isTransparent = false }: { isTransparent?: bool
         <Link href="/" className="flex items-center select-none group relative">
         
           <div
-            className={`relative shrink-0 transition-all duration-300 ease-in-out ${isScrolled ? "w-25 h-25" : "w-35 h-35"
+            className={`relative shrink-0 transition-all duration-300 ease-in-out ${isScrolled ? "w-25 h-25" : "w-33 h-33"
               }`}
           >
             <Image
@@ -74,7 +74,7 @@ export default function Navbar({ isTransparent = false }: { isTransparent?: bool
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-bold uppercase tracking-widest transition-colors duration-200 relative py-1 ${active
+                className={`text-[12px] font-bold uppercase tracking-widest transition-colors duration-200 relative py-1 ${active
                   ? "text-blue-500 font-extrabold"
                   : "text-gray-300 hover:text-blue-400"
                   }`}
