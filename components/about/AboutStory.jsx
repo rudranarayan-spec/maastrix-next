@@ -35,7 +35,7 @@ export default function AboutStory() {
           </div>
 
           {/* RIGHT COLUMN: BRAND STORY CONTENT */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-7 space-y-6">
             <div className="space-y-4">
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 border border-blue-100">
                 <span className="text-[10px] font-bold uppercase tracking-widest text-blue-600">Our Heritage</span>

@@ -199,7 +199,7 @@ function ParallaxRow({ post, index }: { post: typeof ARCHITECTURE_POSTS[0]; inde
         </div>
 
         {/* Problem vs Blueprint Matrix Split */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 text-xs border-b border-slate-100 pb-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2 text-sm border-b border-slate-200 pb-6">
           <div className="space-y-2">
             <span className="font-black text-slate-950 uppercase tracking-wider text-[10px] flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 bg-rose-500 rounded-full" /> The Structural Challenge

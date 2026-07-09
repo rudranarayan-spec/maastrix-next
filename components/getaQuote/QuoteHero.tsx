@@ -110,7 +110,7 @@ export default function QuoteHero() {
                       <h4 className="text-sm font-black text-white group-hover/item:text-blue-400 transition-colors duration-150">
                         {step.title}
                       </h4>
-                      <p className="text-xs text-gray-400 font-medium leading-relaxed">
+                      <p className="text-sm text-gray-400 font-medium leading-relaxed">
                         {step.desc}
                       </p>
                     </div>

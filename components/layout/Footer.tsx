@@ -48,7 +48,7 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-sm font-bold text-white uppercase tracking-wider mb-0.5">{item.title}</h3>
-                <p className="text-[11px] text-gray-400 group-hover:text-white transition-colors">{item.val}</p>
+                <p className="text-[13px] text-gray-400 group-hover:text-white transition-colors">{item.val}</p>
               </div>
             </a>
           ))}
@@ -83,7 +83,7 @@ export default function Footer() {
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed text-gray-500 max-w-xs mt-4">
+            <p className="text-sm leading-relaxed text-gray-400 max-w-xs mt-4">
               We are a highly effective, learning and fast growing organization with a global footprint in USA, UK, Canada, Norway, Australia and India.
             </p>
           </div>
@@ -91,17 +91,17 @@ export default function Footer() {
           {/* Quick Links */}
           <div className="lg:col-span-4 grid grid-cols-2 gap-8">
             <div>
-              <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-4 border-l-2 border-blue-600 pl-3">Quick Link</h4>
-              <ul className="space-y-3 text-[11px]">
-                {["Services", "Contact"].map((link) => (
+              <h4 className="text-[12px] font-bold text-white uppercase tracking-widest mb-4 border-l-2 border-blue-600 pl-3">Quick Link</h4>
+              <ul className="space-y-3 text-[13px]">
+                {["Services",  "Careers", "Contact"].map((link) => (
                   <li key={link}><Link href={`/${link.toLowerCase().replace(" ", "")}`} className="hover:text-blue-400 transition-colors">{link}</Link></li>
                 ))}
               </ul>
             </div>
             <div>
-              <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-4 border-l-2 border-blue-600 pl-3">Resources</h4>
-              <ul className="space-y-3 text-[11px]">
-                {["Portfolio", "Careers", "Blog"].map((link) => (
+              <h4 className="text-[12px] font-bold text-white uppercase tracking-widest mb-4 border-l-2 border-blue-600 pl-3">Resources</h4>
+              <ul className="space-y-3 text-[13px]">
+                {["Portfolio", "Blog"].map((link) => (
                   <li key={link}><Link href={`/${link.toLowerCase()}`} className="hover:text-blue-400 transition-colors">{link}</Link></li>
                 ))}
               </ul>

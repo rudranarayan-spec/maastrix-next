@@ -22,7 +22,7 @@ export default function CaseStudyJournal() {
   return (
     <section
       ref={containerRef}
-      className="relative w-full bg-[#f8fafc] text-slate-900 py-24 lg:py-32 overflow-hidden border-t border-slate-200"
+      className="relative w-full bg-[#f8fafc] text-slate-900 py-24 overflow-hidden border-t border-slate-200"
       style={{ "--scroll-y": "0" } as React.CSSProperties}
     >
 
@@ -145,7 +145,7 @@ function ParallaxCard({ project }: { project: ProjectCard }) {
           {/* Technology Pills System */}
           <div className="flex flex-wrap gap-1.5 pt-1">
             {project.tags.map((tag, tIdx) => (
-              <span key={tIdx} className="text-[10px] font-bold px-2 py-0.5 bg-slate-100 text-slate-600 rounded">
+              <span key={tIdx} className="text-[11px] font-bold px-2 py-0.5 bg-slate-100 text-slate-600 rounded">
                 {tag}
               </span>
             ))}

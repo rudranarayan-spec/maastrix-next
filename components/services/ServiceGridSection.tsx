@@ -87,11 +87,11 @@ export default function ServiceGridSection() {
             <div className="grid grid-cols-2 gap-4 max-w-lg pt-2">
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
                 <h4 className="text-sm font-black text-slate-950">Expertise-Led Squads</h4>
-                <p className="text-xs text-slate-500 mt-1">Vetted backend, front-end, and mobile developers.</p>
+                <p className="text-sm text-slate-500 mt-1">Vetted backend, front-end, and mobile developers.</p>
               </div>
               <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/60">
                 <h4 className="text-sm font-black text-slate-950">Predictable Velocity</h4>
-                <p className="text-xs text-slate-500 mt-1">High-end architecture delivered on strict sprint cycles.</p>
+                <p className="text-sm text-slate-500 mt-1">High-end architecture delivered on strict sprint cycles.</p>
               </div>
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function ServiceGridSection() {
             <h3 className="text-2xl sm:text-4xl font-black tracking-tight text-slate-950">
               Solutions Configured for Enterprise Growth
             </h3>
-            <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed">
+            <p className="text-sm sm:text-sm text-slate-700 font-medium leading-relaxed">
               Select an engineering track to map our system capabilities directly against your complex business prerequisites.
             </p>
           </div>

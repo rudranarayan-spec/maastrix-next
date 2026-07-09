@@ -104,7 +104,7 @@ export default function ContactHero() {
               </div>
               <div>
                 <h3 className="text-sm font-black text-white uppercase tracking-wider">Direct Engineer Comms</h3>
-                <p className="text-xs text-gray-400 font-medium leading-relaxed mt-1">
+                <p className="text-sm text-gray-400 font-medium leading-relaxed mt-1">
                   All requests clear incoming pipelines straight to senior software technical architects, skipping bloated management delays.
                 </p>
               </div>
@@ -117,7 +117,7 @@ export default function ContactHero() {
               </div>
               <div>
                 <h3 className="text-sm font-black text-white uppercase tracking-wider">Enterprise Security Guardrails</h3>
-                <p className="text-xs text-gray-400 font-medium leading-relaxed mt-1">
+                <p className="text-sm text-gray-400 font-medium leading-relaxed mt-1">
                   Your source blueprints, structural documentation, and application specifications are entirely safe under strict NDA workflows.
                 </p>
               </div>

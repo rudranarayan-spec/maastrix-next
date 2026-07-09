@@ -130,7 +130,7 @@ export default function PortfolioShowcase() {
                 {/* Client Reference & Call to Action Footer */}
                 <div className="flex items-center justify-between pt-4 border-t border-slate-100 text-[11px] font-bold">
                   <div>
-                    <span className="text-slate-400 block font-medium text-[9px] uppercase tracking-widest">
+                    <span className="text-slate-600 block font-bold text-[10px] uppercase tracking-widest">
                       Enterprise Client
                     </span>
                     <span className="text-slate-800 text-xs sm:text-sm font-black">

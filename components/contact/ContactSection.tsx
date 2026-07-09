@@ -108,7 +108,7 @@ export default function ContactSection() {
               <h2 className="text-4xl font-black tracking-tight text-slate-950 mt-4 leading-tight">
                 Have A Project <br />in Mind? Say Hi!
               </h2>
-              <p className="mt-4 text-sm text-slate-600 leading-relaxed max-w-md">
+              <p className="mt-4 text-sm text-slate-800 leading-relaxed max-w-md">
                 Please give us a call, drop us an email, or fill out the digital transformation intake form and our engineering architects will map out your blueprint.
               </p>
             </div>
@@ -121,8 +121,8 @@ export default function ContactSection() {
                   <MapPin className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Address:</h4>
-                  <p className="text-xs font-semibold text-slate-800 mt-0.5 leading-relaxed">
+                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider">Address:</h4>
+                  <p className="text-sm font-semibold text-slate-800 mt-0.5 leading-relaxed">
                     MBM Silver, Plot L3/60, 3rd Floor, Acharya Vihar, Bhubaneswar, Odisha, India. Pin :751013
                   </p>
                 </div>
@@ -134,8 +134,8 @@ export default function ContactSection() {
                   <Mail className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Email:</h4>
-                  <p className="text-xs font-bold text-slate-800 mt-0.5 group-hover:text-blue-600 transition-colors">
+                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider">Email:</h4>
+                  <p className="text-sm font-bold text-slate-800 mt-0.5 group-hover:text-blue-600 transition-colors">
                     info@maastrixsolutions.com
                   </p>
                 </div>
@@ -147,8 +147,8 @@ export default function ContactSection() {
                   <Phone className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Call:</h4>
-                  <p className="text-xs font-bold text-slate-800 mt-0.5 group-hover:text-blue-600 transition-colors">
+                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider">Call:</h4>
+                  <p className="text-sm font-bold text-slate-800 mt-0.5 group-hover:text-blue-600 transition-colors">
                     +91-674-2540245 / 2567340
                   </p>
                 </div>
@@ -160,8 +160,8 @@ export default function ContactSection() {
                   <Globe className="h-5 w-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Web:</h4>
-                  <p className="text-xs font-semibold text-slate-800 mt-0.5">
+                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-wider">Web:</h4>
+                  <p className="text-sm font-semibold text-slate-800 mt-0.5">
                     www.maastrixsolutions.com
                   </p>
                 </div>
@@ -178,7 +178,7 @@ export default function ContactSection() {
                 <CheckCircle2 className="h-8 w-8" />
               </div>
               <h3 className="text-lg font-bold text-slate-950">Intake Document Transmitted</h3>
-              <p className="text-xs text-slate-500 text-center max-w-sm mt-2">
+              <p className="text-sm text-slate-500 text-center max-w-sm mt-2">
                 Thank you. Your request parameter map has been cataloged. An internal stakeholder will connect via your preferred communication choice.
               </p>
             </div>
@@ -210,7 +210,7 @@ export default function ContactSection() {
                       <span className={`text-xs font-bold ${formState.category === cat.id ? "text-blue-600" : "text-slate-800"}`}>
                         {cat.label}
                       </span>
-                      <span className="text-[11px] text-slate-400 mt-1 leading-snug">
+                      <span className="text-[13px] text-slate-800 mt-1 leading-snug">
                         {cat.desc}
                       </span>
                     </button>
@@ -229,7 +229,7 @@ export default function ContactSection() {
                     value={formState.name}
                     onChange={(e) => setFormState({ ...formState, name: e.target.value })}
                     placeholder="Enter your name"
-                    className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
+                    className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -241,7 +241,7 @@ export default function ContactSection() {
                     value={formState.email}
                     onChange={(e) => setFormState({ ...formState, email: e.target.value })}
                     placeholder="Enter your email"
-                    className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
+                    className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
                   />
                 </div>
               </div>
@@ -255,7 +255,7 @@ export default function ContactSection() {
                   value={formState.phone}
                   onChange={(e) => setFormState({ ...formState, phone: e.target.value })}
                   placeholder="Enter Your Phone/Mobile #"
-                  className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
+                  className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all"
                 />
               </div>
 
@@ -269,7 +269,7 @@ export default function ContactSection() {
                   value={formState.address}
                   onChange={(e) => setFormState({ ...formState, address: e.target.value })}
                   placeholder="Your Address.."
-                  className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all resize-none"
+                  className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all resize-none"
                 />
               </div>
 
@@ -282,7 +282,7 @@ export default function ContactSection() {
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
                   placeholder="Your Messages.."
-                  className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-xs text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all resize-none"
+                  className="w-full rounded-lg bg-slate-50/50 border border-slate-200 px-4 py-3 text-sm text-slate-900 focus:outline-none focus:border-blue-600 focus:bg-white transition-all resize-none"
                 />
               </div>
 

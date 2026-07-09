@@ -3,12 +3,12 @@ import { Monitor, Cpu, Layers, Smartphone, GlobeCheck, BrainCircuit } from 'luci
 
 const HeroSection = () => {
   const features = [
-    { icon: <Monitor className="w-6 h-6" />, title: "Web Development" },
-    { icon: <Smartphone className="w-6 h-6" />, title: "Enterprise Apps" },
-    { icon: <Cpu className="w-6 h-6" />, title: "IT Solutions" },
-    { icon: <Layers className="w-6 h-6" />, title: "Custom Software" },
-    { icon: <GlobeCheck className="w-6 h-6" />, title: "Secure Deployment" },
-    { icon: <BrainCircuit className="w-6 h-6" />, title: "AI Integration" },
+    { icon: <Monitor className="w-8 h-8" />, title: "Web Development" },
+    { icon: <Smartphone className="w-8 h-8" />, title: "Enterprise Apps" },
+    { icon: <Cpu className="w-8 h-8" />, title: "IT Solutions" },
+    { icon: <Layers className="w-8 h-8" />, title: "Custom Software" },
+    { icon: <GlobeCheck className="w-8 h-8" />, title: "Secure Deployment" },
+    { icon: <BrainCircuit className="w-8 h-8" />, title: "AI Integration" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const HeroSection = () => {
               </div>
 
               {/* Categorization links */}
-              <h2 className="text-xs sm:text-sm font-bold tracking-wide text-gray-200 group-hover:text-blue-400 transition-colors duration-300 z-10">
+              <h2 className="text-sm sm:text-sm font-bold tracking-wide text-gray-200 group-hover:text-blue-400 transition-colors duration-300 z-10">
                 {feature.title}
               </h2>
             </div>

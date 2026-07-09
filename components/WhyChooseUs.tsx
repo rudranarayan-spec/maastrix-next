@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
                 </span>
               </h2>
               
-              <p className="text-sm text-slate-500 leading-relaxed font-medium max-w-lg">
+              <p className="text-sm text-slate-800 leading-relaxed font-medium max-w-lg">
                 We equip global organizations with elite backend and full-stack engineering power. By eliminating typical non-technical agency layers, our teams interface directly on code infrastructure to maximize reliability and data throughput.
               </p>
             </div>
@@ -114,7 +114,7 @@ export default function WhyChooseUs() {
                       <span className="text-xl font-black text-slate-950 tracking-tight">{metric.value}</span>
                       <span className="text-xs font-bold text-slate-800 tracking-tight">{metric.label}</span>
                     </div>
-                    <p className="text-[11px] text-slate-400 font-medium leading-none mt-0.5">{metric.subtext}</p>
+                    <p className="text-[13px] text-slate-600 font-medium leading-none mt-0.5">{metric.subtext}</p>
                   </div>
                 </div>
               ))}
@@ -153,7 +153,7 @@ export default function WhyChooseUs() {
                     <h3 className="text-base font-black tracking-tight text-slate-950 group-hover:text-white transition-colors duration-200">
                       {item.title}
                     </h3>
-                    <p className="text-xs sm:text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-400 transition-colors duration-200">
+                    <p className="text-sm sm:text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-400 transition-colors duration-200">
                       {item.description}
                     </p>
                   </div>
@@ -162,7 +162,7 @@ export default function WhyChooseUs() {
                 {/* Micro Validation Specs Array */}
                 <div className="mt-6 pt-4 border-t border-slate-100 group-hover:border-white/10 space-y-1.5 transition-colors duration-200">
                   {item.specs.map((spec, sIdx) => (
-                    <div key={sIdx} className="flex items-center gap-2 text-[11px] font-bold text-slate-400 group-hover:text-slate-300 transition-colors duration-200">
+                    <div key={sIdx} className="flex items-center gap-2 text-[12px] font-bold text-slate-400 group-hover:text-slate-300 transition-colors duration-200">
                       <CheckCircle2 className="h-3 w-3 text-blue-500 shrink-0" />
                       <span className="tracking-wide">{spec}</span>
                     </div>

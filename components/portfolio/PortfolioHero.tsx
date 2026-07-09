@@ -57,7 +57,7 @@ export default function PortfolioHero() {
                                 <Workflow className="h-5 w-5 text-blue-400" />
                                 How We Solve Complex Diagnostics
                             </h3>
-                            <p className="text-xs sm:text-sm text-gray-300 font-medium leading-relaxed">
+                            <p className="text-sm sm:text-sm text-gray-300 font-medium leading-relaxed">
                                 Every project begins with a deep structural discovery loop. We map endpoint latency, normalize relational schema layout, and systematically containerize data states to guarantee high scalability under persistent, heavy load metrics.
                             </p>
                         </div>
@@ -75,7 +75,7 @@ export default function PortfolioHero() {
                                 <h4 className="text-base font-bold text-white tracking-tight mb-1">
                                     Strategy First
                                 </h4>
-                                <p className="text-xs text-gray-400 font-medium leading-relaxed">
+                                <p className="text-sm text-gray-400 font-medium leading-relaxed">
                                     We match project infrastructure blueprints explicitly to business objectives, eliminating architectural dead-weight before the first line of code is committed.
                                 </p>
                             </div>
@@ -90,7 +90,7 @@ export default function PortfolioHero() {
                                 <h4 className="text-base font-bold text-white tracking-tight mb-1">
                                     Global Scalability
                                 </h4>
-                                <p className="text-xs text-gray-400 font-medium leading-relaxed">
+                                <p className="text-sm text-gray-400 font-medium leading-relaxed">
                                     Engineering optimized setups that consistently perform natively across multiple continents, clouds, data nodes, and varying bandwidth parameters.
                                 </p>
                             </div>

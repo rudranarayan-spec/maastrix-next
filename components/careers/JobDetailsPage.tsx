@@ -161,12 +161,12 @@ export default function JobDetailsPage({ job }: JobDetailsPageProps) {
               <form onSubmit={handleFormSubmit} className="space-y-5">
                 <div className="space-y-1">
                   <h2 className="text-lg font-black tracking-tight text-slate-950">Apply For This Position</h2>
-                  <p className="text-xs text-slate-500 font-medium">Provide your professional links to interface directly with our engineering division.</p>
+                  <p className="text-sm text-slate-500 font-medium">Provide your professional links to interface directly with our engineering division.</p>
                 </div>
 
                 <div className="space-y-1.5">
                   <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5"><User className="h-3 w-3" /> Full Name</label>
-                  <input type="text" name="fullName" required value={formData.fullName} onChange={handleInputChange} placeholder="Rudranarayan Sahu" className="w-full text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-medium" />
+                  <input type="text" name="fullName" required value={formData.fullName} onChange={handleInputChange} placeholder="Enter your name" className="w-full text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-medium" />
                 </div>
 
                 <div className="space-y-1.5">
@@ -182,7 +182,7 @@ export default function JobDetailsPage({ job }: JobDetailsPageProps) {
                 <div className="space-y-1.5">
                   <label className="text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1.5"><FileText className="h-3 w-3" /> Hosted Resume URL</label>
                   <input type="url" name="resumeUrl" required value={formData.resumeUrl} onChange={handleInputChange} placeholder="https://drive.google.com/file/d/... or Dropbox link" className="w-full text-xs sm:text-sm px-4 py-2.5 rounded-xl border border-blue-200 bg-blue-50/10 focus:bg-white focus:ring-4 focus:ring-blue-500/10 focus:border-blue-500 outline-none transition-all font-medium placeholder:text-slate-400" />
-                  <span className="text-[10px] text-slate-400 font-medium block leading-normal px-0.5">Ensure privacy permission parameters allow public discovery (e.g., &quot;Anyone with the link can view&quot;).</span>
+                  <span className="text-[12px] text-[#CC5500] font-medium block leading-normal px-0.5">Ensure privacy permission parameters allow public discovery (e.g., &quot;Anyone with the link can view&quot;).</span>
                 </div>
 
                 <div className="space-y-1.5">

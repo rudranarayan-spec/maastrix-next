@@ -73,7 +73,7 @@ export default function AboutProcess() {
               </h3>
 
               {/* Narrative Content Body */}
-              <p className="text-xs lg:text-sm text-slate-500 leading-relaxed font-medium flex-grow max-w-xs">
+              <p className="text-sm lg:text-sm text-slate-500 leading-relaxed font-medium flex-grow max-w-xs">
                 {step.description}
               </p>
 
