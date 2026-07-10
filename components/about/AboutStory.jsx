@@ -12,7 +12,7 @@ export default function AboutStory() {
   ];
 
   return (
-    <section className="relative bg-white text-slate-900 font-sans py-12 lg:pt-10 overflow-hidden">
+    <section className="relative bg-white text-slate-900 font-sans py-12 pt-0 overflow-hidden">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
