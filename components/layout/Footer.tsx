@@ -115,9 +115,9 @@ export default function Footer() {
       {/* Decorative background */}
       <div className="pointer-events-none absolute -right-28 -top-28 h-72 w-72 rounded-full bg-blue-600/[0.06] blur-3xl sm:h-96 sm:w-96" />
 
-      <div className="relative mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 sm:py-10 lg:px-8">
+      <div className="relative mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 sm:py-8 lg:px-8 lg:py-8">
         {/* Contact tiles */}
-        <div className="grid grid-cols-1 gap-3 border-b border-white/5 pb-8 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-2.5 border-b border-white/5 pb-6 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {contactItems.map((item) => {
             const Icon = item.icon;
 
@@ -128,7 +128,7 @@ export default function Footer() {
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
                 aria-label={`${item.title}: ${item.value}`}
-                className="group flex min-w-0 items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3.5 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:bg-white/[0.04] sm:p-4"
+                className="group flex min-w-0 items-center gap-3 rounded-xl border border-white/5 bg-white/[0.02] p-3 transition-all duration-300 hover:-translate-y-0.5 hover:border-blue-500/20 hover:bg-white/[0.04] sm:p-3.5"
               >
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-blue-600/10 text-blue-400 transition-transform duration-300 group-hover:scale-105">
                   <Icon className="h-4 w-4" />
@@ -149,14 +149,14 @@ export default function Footer() {
         </div>
 
         {/* Main footer content */}
-        <div className="grid grid-cols-1 gap-x-8 gap-y-10 py-10 md:grid-cols-2 lg:grid-cols-12 lg:gap-y-8">
+        <div className="grid grid-cols-1 gap-x-8 gap-y-8 py-7 md:grid-cols-2 lg:grid-cols-12 lg:gap-y-6">
           {/* Logo and description */}
           <div className="md:col-span-2 lg:col-span-5">
-            <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+            <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center">
               <Link
                 href="/"
                 aria-label="Maastrix Solutions home"
-                className="relative block h-20 w-20 shrink-0 sm:h-24 sm:w-24"
+                className="relative block h-18 w-18 shrink-0 sm:h-20 sm:w-20"
               >
                 <Image
                   src="/assets/images/logo-bg-r.png"
@@ -182,9 +182,9 @@ export default function Footer() {
           </div>
 
           {/* Newsletter */}
-          <div className="min-w-0 space-y-5 md:col-span-1 lg:col-span-4">
+          <div className="min-w-0 space-y-4 md:col-span-1 lg:col-span-4">
             <div>
-              <h4 className="mb-3 text-[11px] font-bold uppercase tracking-widest text-white">
+              <h4 className="mb-2 text-[11px] font-bold uppercase tracking-widest text-white">
                 Newsletter
               </h4>
 
@@ -220,8 +220,8 @@ export default function Footer() {
             </div>
 
             {/* ISO and social icons */}
-            <div className="border-t border-white/5 pt-5">
-              <div className="flex flex-col items-center justify-center gap-5 sm:flex-row sm:justify-between">
+            <div className="border-t border-white/5 pt-3">
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:justify-between">
                 {/* ISO */}
                 <div className="flex flex-col items-center sm:items-start">
                   <p className="mb-2 text-[10px] font-semibold uppercase tracking-[0.16em] text-gray-500">
@@ -249,7 +249,7 @@ export default function Footer() {
                       rel="noopener noreferrer"
                       aria-label={social.label}
                       title={social.label}
-                      className="group flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-gray-400 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-600/20"
+                      className="group flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] text-gray-400 transition-all duration-300 hover:-translate-y-1 hover:border-blue-500/40 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-600/20"
                     >
                       <FontAwesomeIcon
                         icon={social.icon}
@@ -264,7 +264,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 py-4 text-[10px] uppercase tracking-wider text-gray-500 sm:text-[11px] md:flex-row">
+        <div className="flex flex-col items-center justify-between gap-2 border-t border-white/5 py-3 text-[10px] uppercase tracking-wider text-gray-500 sm:text-[11px] md:flex-row">
           <p className="text-center normal-case tracking-normal md:text-left">
             © {new Date().getFullYear()} Maastrix Solutions. All rights reserved.
           </p>
@@ -303,11 +303,11 @@ function FooterLinkColumn({
 }: FooterLinkColumnProps) {
   return (
     <div className="min-w-0">
-      <h4 className="mb-3 border-l-2 border-blue-600 pl-3 text-[11px] font-bold uppercase tracking-widest text-white sm:text-[12px]">
+      <h4 className="mb-2 border-l-2 border-blue-600 pl-3 text-[11px] font-bold uppercase tracking-widest text-white sm:text-[12px]">
         {title}
       </h4>
 
-      <ul className="space-y-2.5 text-[12px] sm:text-[13px]">
+      <ul className="space-y-2 text-[12px] sm:text-[13px]">
         {links.map((link) => (
           <li key={link.label}>
             <Link
