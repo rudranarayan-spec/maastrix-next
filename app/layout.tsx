@@ -1,38 +1,60 @@
-import { Plus_Jakarta_Sans, Geist } from 'next/font/google';
+import type { Metadata } from "next";
+import { Plus_Jakarta_Sans, Geist } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
 import "./globals.css";
-import Navbar from '@/components/layout/Navbar';
-import Footer from '@/components/layout/Footer';
-import CookieConsent from '@/components/CookieConsent';
+
+import CookieConsent from "@/components/CookieConsent";
+import ScrollToTop from "@/components/ScrollToTop";
 import { cn } from "@/lib/utils";
-import ScrollToTop from '@/components/ScrollToTop';
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-
-
-// Configure the Inter font weights
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700', '800'],
-  variable: '--font-jakarta', // Creates a CSS variable
+const geist = Geist({
+  subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-export const metadata = {
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-jakarta",
+});
+
+export const metadata: Metadata = {
+   metadataBase: new URL("https://www.maastrixsolutions.com"),
   title: "Maastrix Solutions - Enterprise AI & Digital Transformation",
   description: "Web application and IT solutions provider with over 22 years of expertise.",
+  verification: {
+    google: "B4opya_l3cwAg7nlikVPDONDkxyH1oULJFwUbc2J5TY",
+  },
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
+  const googleAnalyticsId =
+    process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
+
   return (
-    // Apply the font class directly to the HTML tag globally
-    <html lang="en" className={cn(jakarta.className, "font-sans", geist.variable)}>
+    <html
+      lang="en"
+      className={cn(
+        jakarta.className,
+        jakarta.variable,
+        geist.variable,
+        "font-sans"
+      )}
+    >
       <body>
         {children}
-        <CookieConsent/>
+
+        <CookieConsent />
         <ScrollToTop />
+
+        {googleAnalyticsId ? (
+          <GoogleAnalytics gaId={googleAnalyticsId} />
+        ) : null}
       </body>
     </html>
   );
