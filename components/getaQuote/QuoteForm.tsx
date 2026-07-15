@@ -37,6 +37,7 @@ export default function QuoteForm() {
     } catch (err) {
       console.error("Quote form submit error:", err);
       setFormStatus("error");
+      setToken("");
     }
   };
 

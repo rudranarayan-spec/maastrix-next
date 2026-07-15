@@ -1,5 +1,5 @@
 "use client";
-
+import { Turnstile } from "@marsidev/react-turnstile";
 import React, { useState } from "react";
 import {
   MapPin,
@@ -23,6 +23,7 @@ interface JobDetailsPageProps {
 
 export default function JobDetailsPage({ job }: JobDetailsPageProps) {
   const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const [token, setToken] = useState<string>("");
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -38,6 +39,11 @@ export default function JobDetailsPage({ job }: JobDetailsPageProps) {
 
   const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!token) {
+      alert("Please complete the verification challenge.");
+      return;
+    }
+
     setFormStatus("submitting");
 
     try {
@@ -53,12 +59,13 @@ export default function JobDetailsPage({ job }: JobDetailsPageProps) {
         location: job.location,
         experience: job.experience,
         employmentType: job.type,
-      });
+      }, token);
 
       if (result.success) {
         setFormStatus("success");
       } else {
         setFormStatus("error");
+        setToken("");
       }
     } catch (error) {
       console.error("Job application submit error:", error);
@@ -187,6 +194,15 @@ export default function JobDetailsPage({ job }: JobDetailsPageProps) {
                     <span>We are experiencing network bottlenecks saving details to our primary pipe. Please re-verify fields or forward your portfolio endpoints directly via email.</span>
                   </div>
                 )}
+
+                <div className="flex justify-center sm:justify-start">
+                  <Turnstile
+                    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+                    onSuccess={(token) => setToken(token)}
+                    onExpire={() => setToken("")}
+                    onError={() => setToken("")}
+                  />
+                </div>
 
                 <button
                   type="submit"
